@@ -42,3 +42,23 @@ module "eks" {
 
   addons = var.addons
 }
+
+
+
+
+resource "aws_ecr_repository" "frontend" {
+  name = "frontend"
+}
+
+resource "aws_ecr_repository" "backend" {
+  name = "backend"
+}
+
+
+output "repository_uri" {
+  value = aws_ecr_repository.frontend.repository_url
+}
+
+output "repository_uri" {
+  value = aws_ecr_repository.backend.repository_url
+}
