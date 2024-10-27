@@ -55,10 +55,10 @@ resource "aws_ecr_repository" "backend" {
 }
 
 
-output "repository_uri" {
+output "ecr_front-uri" {
   value = aws_ecr_repository.frontend.repository_url
 }
 
-output "repository_uri" {
+output "ecr_back-uri" {
   value = aws_ecr_repository.backend.repository_url
 }
